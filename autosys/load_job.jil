@@ -1,0 +1,11 @@
+/* Sample Autosys JIL job to run the loader script */
+insert_job: BANK_DATA_LOADER_01 job_type: c
+command: /opt/scripts/load_files.sh ORACLE_USER ORACLE_PASS ORACLE_DB
+machine: oracle-db-server
+owner: oracle
+permission: gx,ge
+std_out_file: /opt/logs/bank_loader.out
+std_err_file: /opt/logs/bank_loader.err
+description: "Daily data loader job"
+start_times: "02:00"
+run_calendar: ALL_DAYS
