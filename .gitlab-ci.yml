@@ -1,0 +1,14 @@
+stages:
+  - validate
+  - deploy
+validate_job:
+  stage: validate
+  script:
+    - echo "Running static checks (sample)"
+    - echo "Listing files:"
+    - ls -la
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Simulating deploy: run load_files.sh (no creds)"
+    - echo "Done."
